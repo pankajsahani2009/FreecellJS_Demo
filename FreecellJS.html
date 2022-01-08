@@ -118,10 +118,10 @@
 			// SETUP: Define / Start async load of sounds files
 			// NOTE: iOS (as of iOS9) is unable to play ogg files, so we are using MP3 for everything
 			var gGameSounds = {};
-			gGameSounds.cardFlip    = { buffer:null, url:'sounds/cardFlip.mp3',    src:'freesound.org/people/f4ngy/sounds/240776/'    };
-			gGameSounds.cardShuffle = { buffer:null, url:'sounds/cardShuffle.mp3', src:'freesound.org/people/deathpie/sounds/19245/'  };
-			gGameSounds.crowdCheer  = { buffer:null, url:'sounds/crowdCheer.mp3',  src:'soundbible.com/1700-5-Sec-Crowd-Cheer.html'   };
-			gGameSounds.sadTrombone = { buffer:null, url:'sounds/sadTrombone.mp3', src:'freesound.org/people/Benboncan/sounds/73581/' };
+			gGameSounds.cardFlip    = { buffer:null, url:'https://freesound.org/data/previews/240/240776_4107740-lq.mp3',    src:'https://freesound.org/data/previews/240/240776_4107740-lq.mp3'    };
+			gGameSounds.cardShuffle = { buffer:null, url:'https://freesound.org/data/previews/19/19245_9190-lq.mp3', src:'https://freesound.org/data/previews/19/19245_9190-lq.mp3'  };
+			gGameSounds.crowdCheer  = { buffer:null, url:'https://soundbible.com/mp3/5_Sec_Crowd_Cheer-Mike_Koenig-1562033255.mp3',  src:'https://soundbible.com/mp3/5_Sec_Crowd_Cheer-Mike_Koenig-1562033255.mp3'   };
+			gGameSounds.sadTrombone = { buffer:null, url:'https://freesound.org/data/previews/73/73581_634166-lq.mp3', src:'https://freesound.org/data/previews/73/73581_634166-lq.mp3' };
 		}
 
 		// ==============================================================================================
@@ -371,7 +371,8 @@
 			$('#dialogMenu').dialog('close');
 
 			// STEP 3: Clear/Fill board
-			doFillBoard();
+			//doFillBoard();
+			appStart(); // Modified the code to load start page
 		}
 
 		function handleOptionsOpen() {
@@ -673,7 +674,7 @@
 
 	<div id="dialogMenu" style="display:none">
 		<div class="bigBtnBar">
-			<button onclick="handleOptionsNewGame()">New Game</button>
+			<button onclick="handleOptionsNewGame()">End Game</button>
 			<button onclick="handleOptionsOpen()">Options</button>
 			<button onclick="$('#dialogMenu').dialog('close');">Resume</button>
 		</div>
